@@ -5,9 +5,6 @@ import java.util.Scanner;
 
 public class Billingsystem {
 
-    static int total = 0;
-    String customerName;
-
     public static void main(String[] args) {
         ArrayList<String> itemName=new ArrayList<>();
         ArrayList<Integer> quantity=new ArrayList<>();

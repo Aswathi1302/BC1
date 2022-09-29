@@ -20,9 +20,9 @@ public class Billingsystem {
         Scanner s = new Scanner(System.in);
         while (true) {
             System.out.println("choose you option");
-            System.out.println("Normal");
-            System.out.println("dyining");
-            System.out.println("display billing");
+            System.out.println("1.Normal");
+            System.out.println("2.dyining");
+            System.out.println("3.display billing");
 
             v1 = s.nextInt();
             switch (v1) {

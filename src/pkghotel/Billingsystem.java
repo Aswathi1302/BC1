@@ -12,7 +12,7 @@ public class Billingsystem {
 
         int v1;
         fooditems fItems = new fooditems(10, 20, 130, 23, 45);
-        fooditems dy = new fooditems(15, 20, 130, 46, 45);
+        fooditems dy = new fooditems(15, 20, 135, 46, 45);
         HashMap<String,String> map=new HashMap<String,String>();
         ArrayList<String> transactionList=new ArrayList<>();
 
@@ -57,7 +57,7 @@ public class Billingsystem {
                             int qut2 = s.nextInt();
                             itemName.add("biriyani");
                             quantity.add(qut2);
-                            price.add(qut2*45);
+                            price.add(qut2*130);
                             break;
                         case 4:
                             System.out.println("how many quantity");
@@ -89,9 +89,10 @@ public class Billingsystem {
                             map.put("customer name",customerName);
                             map.put("amount", String.valueOf(sum));
                             map.put("mode","Normal");
-
+                            System.out.println("**********************************");
                             transactionList.add(String.valueOf(map));
-                            System.out.println(customerName + "  " + "Your bill is ready");
+                            System.out.println(customerName + "  " + "YOUR BILL IS READY ");
+
                             System.out.println("total bill=" + sum);
 
 
@@ -119,7 +120,7 @@ public class Billingsystem {
                             int qut = s.nextInt();
                             itemName.add("Tea");
                             quantity.add(qut);
-                            price.add(qut*10);
+                            price.add(qut*15);
                             break;
                         case 2:
                             System.out.println("how many quantity");
@@ -133,14 +134,14 @@ public class Billingsystem {
                             int qut2 = s.nextInt();
                             itemName.add("biriyani");
                             quantity.add(qut2);
-                            price.add(qut2*45);
+                            price.add(qut2*135);
                             break;
                         case 4:
                             System.out.println("how many quantity");
                             int qut3 = s.nextInt();
                             itemName.add("juice");
                             quantity.add(qut3);
-                            price.add(qut3*23);
+                            price.add(qut3*46);
                             break;
                         case 5:
                             System.out.println("how many quantity");
@@ -167,7 +168,8 @@ public class Billingsystem {
 
                             transactionList.add(String.valueOf(map));
                             System.out.println("**********************************");
-                            System.out.println(customerName + "  " + "Your bill is ready");
+                            System.out.println(customerName + "  " + "YOUR BILL IS READY");
+
                             System.out.println("total bill=" + sum);
                             break;
                         case 7:

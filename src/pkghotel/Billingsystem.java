@@ -5,15 +5,16 @@ import java.util.Scanner;
 
 public class Billingsystem {
 
-    static int total = 0;
-
     public static void main(String[] args) {
+        ArrayList<String> itemName=new ArrayList<>();
+        ArrayList<Integer> quantity=new ArrayList<>();
+        ArrayList<Integer> price=new ArrayList<>();
 
         int v1;
-        fooditems fItems = new fooditems(10, 20, 45, 23, 45);
-        fooditems dy = new fooditems(10, 20, 23, 46, 45);
+        fooditems fItems = new fooditems(10, 20, 130, 23, 45);
+        fooditems dy = new fooditems(15, 20, 135, 46, 45);
         HashMap<String,String> map=new HashMap<String,String>();
-        ArrayList<HashMap> transactionList=new ArrayList<>();
+        ArrayList<String> transactionList=new ArrayList<>();
 
 
         Scanner s = new Scanner(System.in);
@@ -21,6 +22,7 @@ public class Billingsystem {
             System.out.println("choose you option");
             System.out.println("Normal");
             System.out.println("dyining");
+            System.out.println("display billing");
 
             v1 = s.nextInt();
             switch (v1) {
@@ -38,31 +40,62 @@ public class Billingsystem {
                     switch (ch) {
                         case 1:
                             System.out.println("how many quantity");
-                            int a = s.nextInt();
-                            total = (10 * a) + total;
+                            int qut = s.nextInt();
+                            itemName.add("Tea");
+                            quantity.add(qut);
+                            price.add(qut*10);
                             break;
                         case 2:
                             System.out.println("how many quantity");
-                            int b = s.nextInt();
-                            total = (15 * b) + total;
+                            int qut1 = s.nextInt();
+                            itemName.add("cofee");
+                            quantity.add(qut1);
+                            price.add(qut1*20);
                             break;
                         case 3:
                             System.out.println("how many quantity");
-                            int c = s.nextInt();
-                            total = (200 * c) + total;
+                            int qut2 = s.nextInt();
+                            itemName.add("biriyani");
+                            quantity.add(qut2);
+                            price.add(qut2*130);
                             break;
                         case 4:
                             System.out.println("how many quantity");
-                            int d = s.nextInt();
-                            total = (45 * d) + total;
+                            int qut3 = s.nextInt();
+                            itemName.add("juice");
+                            quantity.add(qut3);
+                            price.add(qut3*23);
                             break;
                         case 5:
                             System.out.println("how many quantity");
-                            int e = s.nextInt();
-                            total = (75 * e) + total;
+                            int qut4 = s.nextInt();
+                            itemName.add("shake");
+                            quantity.add(qut4);
+                            price.add(qut4*45);
                             break;
                         case 6:
-                            System.out.println("total bill=" + total);
+                            System.out.println("**********************************");
+                            int sum=0;
+                            for(int i=0;i<=itemName.size()-1;i++)
+                            {
+
+                                System.out.println("1.ItemName==>" +itemName.get(i));
+                                System.out.println("2.quantity==>"+quantity.get(i));
+                                System.out.println("3.Price==>"+price.get(i));
+                                sum +=price.get(i);
+                            }
+                            System.out.println("enter your name");
+                            String customerName =s.next();
+                            map.put("customer name",customerName);
+                            map.put("amount", String.valueOf(sum));
+                            map.put("mode","Normal");
+                            System.out.println("**********************************");
+                            transactionList.add(String.valueOf(map));
+                            System.out.println(customerName + "  " + "YOUR BILL IS READY ");
+
+                            System.out.println("total bill=" + sum);
+
+
                             break;
                         case 7:
                             System.exit(0);
@@ -84,36 +117,67 @@ public class Billingsystem {
                     switch (ch1) {
                         case 1:
                             System.out.println("how many quantity");
-                            int a = s.nextInt();
-                            total = (10 * a) + total;
+                            int qut = s.nextInt();
+                            itemName.add("Tea");
+                            quantity.add(qut);
+                            price.add(qut*15);
                             break;
                         case 2:
                             System.out.println("how many quantity");
-                            int b = s.nextInt();
-                            total = (15 * b) + total;
+                            int qut1 = s.nextInt();
+                            itemName.add("cofee");
+                            quantity.add(qut1);
+                            price.add(qut1*20);
                             break;
                         case 3:
                             System.out.println("how many quantity");
-                            int c = s.nextInt();
-                            total = (200 * c) + total;
+                            int qut2 = s.nextInt();
+                            itemName.add("biriyani");
+                            quantity.add(qut2);
+                            price.add(qut2*135);
                             break;
                         case 4:
                             System.out.println("how many quantity");
-                            int d = s.nextInt();
-                            total = (45 * d) + total;
+                            int qut3 = s.nextInt();
+                            itemName.add("juice");
+                            quantity.add(qut3);
+                            price.add(qut3*46);
                             break;
                         case 5:
                             System.out.println("how many quantity");
-                            int e = s.nextInt();
-                            total = (75 * e) + total;
+                            int qut4 = s.nextInt();
+                            itemName.add("shake");
+                            quantity.add(qut4);
+                            price.add(qut4*45);
                             break;
                         case 6:
-                            System.out.println("total bill=" + total);
+                            System.out.println("**********************************");
+                            int sum=0;
+                            for(int i=0;i<=itemName.size()-1;i++)
+                            {
+                                System.out.println("1.ItemName==>" +itemName.get(i));
+                                System.out.println("2.quantity==>"+quantity.get(i));
+                                System.out.println("3.Price==>"+price.get(i));
+                                sum +=price.get(i);
+                            }
+                            System.out.println("enter your name");
+                            String customerName =s.next();
+                            map.put("customer name",customerName);
+                            map.put("amount", String.valueOf(sum));
+                            map.put("mode","dyining");
+
+                            transactionList.add(String.valueOf(map));
+                            System.out.println("**********************************");
+                            System.out.println(customerName + "  " + "YOUR BILL IS READY");
+
+                            System.out.println("total bill=" + sum);
                             break;
                         case 7:
                             System.exit(0);
                             break;
                     }
+                case 3:
+                    System.out.println(transactionList);
             }
         }
 
